@@ -57,23 +57,3 @@ export class StorageService<T> {
         }
     }
 }
-/*
-| Syntax                    | Meaning                               |
-| ------------------------- | ------------------------------------- |
-| `import { x } from '...'` | Bring code from other file            |
-| `export`                  | Make available to other files         |
-| `function name(): Type`   | Define reusable code with return type |
-| `param: Type \| Type`     | Union (either type allowed)           |
-| `value is Type`           | Type guard (narrows type if true)     |
-| `throw new Error()`       | Crash with message                    |
-| `const arr: string[]`     | Array of strings                      |
-| `obj as Type`             | Tell TypeScript to treat as type      |
-| `if (a \|\| b)`           | If a OR b is true                     |
-| `if (a && b)`             | If a AND b are true                   |
-| `typeof x`                | Check JavaScript type                 |
-| `class Name<T>`           | Blueprint with generic type           |
-| `constructor(){}`         | Initialize new objects                |
-| `this.property`           | Access object's own property          |
-| `try { } catch { }`       | Handle errors gracefully              |
-| `T \| null`               | Either type T or null                 |
-*/

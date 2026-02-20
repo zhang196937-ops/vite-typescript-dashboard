@@ -58,19 +58,3 @@ export class TaskItem{
         this.element.remove();
     }
 }
-/*
-| Concept                  | Purpose                         |
-| ------------------------ | ------------------------------- |
-| `interface`              | Define required data shape      |
-| `class`                  | Blueprint for component         |
-| `constructor`            | Initialize when created         |
-| `this.`                  | Access object's own properties  |
-| `document.createElement` | Create new HTML tag             |
-| `innerHTML`              | Set HTML content                |
-| `querySelector`          | Find element inside another     |
-| `?.`                     | Optional chaining (safe access) |
-| `addEventListener`       | React to user actions           |
-| `() =>`                  | Arrow function (callback)       |
-| `textContent`            | Safe text insertion             |
-| `.remove()`              | Delete element from page        |
-*/

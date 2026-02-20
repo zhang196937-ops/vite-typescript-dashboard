@@ -28,15 +28,3 @@ export interface Task extends BaseEntity{
 };
 export type TaskFilter = 'all' | TaskStatus;
 export type CreateTaskDTO = Omit<Task, 'id' | 'createdAt' | 'updatedAt'>;
-/*
-| Keyword     | Purpose                          |
-| ----------- | -------------------------------- |
-| `export`    | Make available to other files    |
-| `type`      | Create custom type/shape         |
-| `const`     | Constant value (no reassignment) |
-| `interface` | Describe object shape            |
-| `class`     | Create real objects with methods |
-| `extends`   | Inherit/copy properties          |
-| `?`         | Optional (might be undefined)    |
-| `Omit`      | Remove keys from a type          |
-*/
