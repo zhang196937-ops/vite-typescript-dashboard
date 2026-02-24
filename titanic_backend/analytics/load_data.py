@@ -13,14 +13,14 @@ def load_titanic_data():
 
         for row in reader:
             Passenger.objects.create(
-                survived=bool(int(row['Survived'])),
-                pclass=int(row['Pclass']),
-                name=row['Name']
-                sex=row['Sex']
+                survived=row['Survived'],
+                pclass=row['Pclass'],
+                name=row['Name'],
+                sex=row['Sex'],
                 age=float(row['Age']) if row['Age'] else None,
                 sibsp=int(row['SibSp']),
                 parch=int(row['Parch']),
-                fare=float(row['fare']) if row['fare'] else None,
+                fare=float(row['Fare']) if row['Fare'] else None,
                 embarked=row['Embarked'] if row['Embarked'] else None
             )
     print(f"Loaded {Passenger.objects.count()} passengers!")

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Passenger(models.Model):
     passage_id = models.AutoField(primary_key=True)
-    survived=models.BooleanField()
+    survived=models.IntegerField()
     pclass = models.IntegerField()
     name=models.CharField(max_length=100)
     sex=models.CharField(max_length=10)
