@@ -9,229 +9,200 @@ body {
   background: #f5f5f5;
   color: #333;
   line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 #app {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
 }
 
-.app-header {
+/* Loading & Error */
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* Dashboard */
+.titanic-dashboard {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.app-header h1 {
-  margin-bottom: 15px;
-  color: #646cff;
+.titanic-dashboard h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
 }
 
-.filters {
-  display: flex;
-  gap: 10px;
+.titanic-dashboard h3 {
+  color: #34495e;
+  margin: 25px 0 15px;
+  font-size: 20px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
 }
 
-.filter-btn {
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s;
+/* Overview Stats */
+.stats-overview {
+  margin-bottom: 30px;
 }
 
-.filter-btn:hover {
-  border-color: #646cff;
-}
-
-.filter-btn.active {
-  background: #646cff;
-  color: white;
-  border-color: #646cff;
-}
-
-.app-main {
+.stat-cards {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.sidebar {
-  background: white;
+.stat-card {
+  background: #ecf0f1;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  height: fit-content;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
-.content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.stat-card:hover {
+  transform: translateY(-5px);
 }
 
-/* Task Form */
-.task-form h3 {
-  margin-bottom: 15px;
-  color: #333;
+.stat-card.highlight {
+  background: #3498db;
+  color: white;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.stat-card.success {
+  background: #27ae60;
+  color: white;
 }
 
-.form-group label {
+.stat-card.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.stat-number {
   display: block;
+  font-size: 32px;
+  font-weight: bold;
   margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Class Bars */
+.class-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bar-label {
+  width: 80px;
   font-weight: 500;
   color: #555;
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ecf0f1;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 35px;
+  padding: 0 10px;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  border-radius: 20px;
+  transition: width 0.5s ease;
+  min-width: 5px;
+}
+
+.bar-value {
   font-size: 14px;
+  color: #555;
+  white-space: nowrap;
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #646cff;
+/* Gender Cards */
+.gender-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
 }
 
-.btn-submit {
-  width: 100%;
-  padding: 12px;
-  background: #646cff;
+.gender-card {
+  background: #ecf0f1;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.gender-card.female {
+  background: #e91e63;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.2s;
 }
 
-.btn-submit:hover {
-  background: #535bf2;
+.gender-card h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.form-errors {
-  margin-top: 10px;
-}
-
-.form-errors .error {
-  color: #e74c3c;
-  font-size: 14px;
+.gender-rate {
+  font-size: 42px;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
-/* Task Items */
-.task-grid {
-  display: grid;
-  gap: 15px;
-}
-
-.task-item {
-  border-left: 4px solid #646cff;
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 4px;
-}
-
-.task-item--high { border-left-color: #e74c3c; }
-.task-item--medium { border-left-color: #f39c12; }
-.task-item--low { border-left-color: #27ae60; }
-
-.task-item__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.task-item__header h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.badge {
-  padding: 4px 8px;
-  background: rgba(0,0,0,0.1);
-  border-radius: 4px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.task-item p {
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.task-item__actions {
-  display: flex;
-  gap: 10px;
-}
-
-.btn-toggle,
-.btn-delete {
-  padding: 6px 12px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 4px;
-  cursor: pointer;
+.gender-detail {
   font-size: 14px;
+  opacity: 0.8;
 }
 
-.btn-toggle:hover {
-  background: #27ae60;
-  color: white;
-  border-color: #27ae60;
-}
-
-.btn-delete {
-  color: #e74c3c;
-}
-
-.btn-delete:hover {
-  background: #e74c3c;
-  color: white;
-  border-color: #e74c3c;
-}
-
-.empty {
-  text-align: center;
-  color: #999;
-  padding: 40px;
-}
-
-@media (max-width: 768px) {
-  .app-main {
+/* Responsive */
+@media (max-width: 600px) {
+  .stat-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .gender-cards {
     grid-template-columns: 1fr;
   }
-}
-
-.app-footer {
-  margin-top: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 8px;
-  text-align: center;
-  color: #666;
-  font-size: 14px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.app-footer span {
-  color: #646cff;
-  font-weight: 500;
+  
+  .bar-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .bar-label {
+    width: auto;
+  }
 }

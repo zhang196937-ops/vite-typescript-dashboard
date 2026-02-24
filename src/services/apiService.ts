@@ -18,7 +18,7 @@ export interface PclassStat{
     pclass:number;
     total:number;
     survived:number;
-    survived_rate:number;
+    survival_rate:number;
 }
 export interface SexStat{
     total:number;
@@ -27,8 +27,8 @@ export interface SexStat{
 }
 export interface SurvivalStats{
     overview:StatsOverview;
-    statistics_by_pclass:PclassStat;
-    statistics_by_sex:{
+    statistic_by_pclass:PclassStat[];
+    statistic_by_gender:{
         male:SexStat;
         female:SexStat;
     }

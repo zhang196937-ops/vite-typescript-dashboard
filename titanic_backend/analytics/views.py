@@ -42,7 +42,7 @@ def survival_stats(request):
         pclass_survived_rate = round(pclass_survived / pclass_total * 100,2)
         pclass_stats.append(
             {
-                'class':cabinet,
+                'pclass':cabinet,
                 'total':pclass_total,
                 'survived':pclass_survived,
                 'survival_rate':pclass_survived_rate

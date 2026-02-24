@@ -26,7 +26,7 @@ export class TitanicDashboard{
     }
     private  render(): void{
         if(!this.stats) return;
-        const { overview, statistics_by_pclass,statistics_by_sex} = this.stats;
+        const { overview, statistic_by_pclass,statistic_by_gender} = this.stats;
         this.container.innerHTML = `
             <div class="titanic-dashboard">
                 <h2>Titanic Survival Analysis</h2>
@@ -53,9 +53,9 @@ export class TitanicDashboard{
 
             <div class="stats-by-class">
                 <h3>Survival by Class</h3>
-                <div class="class-bars">${statistics_by_pclass.map(c => `
+                <div class="class-bars">${statistic_by_pclass.map(c => `
                     <div class="bar-row">
-                        <span class="bar-label">${c.class}st Class</span>
+                        <span class="bar-label">${c.pclass}st Class</span>
                         <div class="bar-container">
                             <div class="bar" style="width: ${c.survival_rate}%"></div>
                                 <span class="bar-value">${c.survival_rate}% (${c.survived}/${c.total})</span>
@@ -70,13 +70,13 @@ export class TitanicDashboard{
                 <div class="gender-cards">
                     <div class="gender-card">
                         <h4>Male</h4>
-                        <div class="gender-rate">${statistics_by_sex.male.survival_rate}%</div>
-                        <div class="gender-detail">${statistics_by_sex.male.survived} / ${statistics_by_sex.male.total}</div>
+                        <div class="gender-rate">${statistic_by_gender.male.survival_rate}%</div>
+                        <div class="gender-detail">${statistic_by_gender.male.survived} / ${statistic_by_gender.male.total}</div>
                     </div>
                     <div class="gender-card female">
                         <h4>Female</h4>
-                        <div class="gender-rate">${statistics_by_sex.female.survival_rate}%</div>
-                        <div class="gender-detail">${statistics_by_sex.female.survived} / ${statistics_by_sex.female.total}</div>
+                        <div class="gender-rate">${statistic_by_gender.female.survival_rate}%</div>
+                        <div class="gender-detail">${statistic_by_gender.female.survived} / ${statistic_by_gender.female.total}</div>
                     </div>
                 </div>
             </div>

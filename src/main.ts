@@ -1,10 +1,16 @@
 import './style.css'
-import { TaskList } from './components/TaskList'
-import { TaskForm } from './components/TaskForm'
+import { TitanicDashboard } from './components/TitanicDashboard';
+//import { TaskList } from './components/TaskList'
+//import { TaskForm } from './components/TaskForm'
 
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) throw new Error("App container not found");
 
+app.innerHTML = `<div id="titanic-dashboard"></div>`;
+
+new TitanicDashboard('#titanic-dashboard');
+
+/*
 app.innerHTML=`
   <header class="app-header">
     <h1>Task Dashboard</h1>
